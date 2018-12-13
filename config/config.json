@@ -1,5 +1,6 @@
 {
   "PORT": 80,
   "DOMAIN": "localhost",
-  "USERSERVICE": "localhost:8081"
+  "USERSERVICE": "localhost:8081",
+  "FRONTSERVICE": "localhost:8080"
 }
