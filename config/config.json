@@ -1,17 +1,5 @@
 {
   "PORT": 80,
   "DOMAIN": "localhost",
-  "USER-SERVICE": "localhost:8081",
-  "routes": [
-    {
-      "DOMAIN": "USER-SERVICE",
-      "from": "/api/login",
-      "to": "/api/login"
-    },
-    {
-      "DOMAIN": "USER-SERVICE",
-      "from": "/api/users",
-      "to": "/api/users"
-    }
-  ]
+  "USERSERVICE": "localhost:8081"
 }

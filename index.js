@@ -10,10 +10,10 @@ config.routes.map(route => {
 });
 */
 proxy.register(
-  process.env.DOMAIN + "/api/login",
-  process.env.USERSERVICE + "/api/login"
+  process.env.DOMAIN || config.DOMAIN + "/api/login",
+  process.env.USERSERVICE || config.USERSERVICE + "/api/login"
 );
 proxy.register(
-  process.env.DOMAIN + "/api/users",
-  process.env.USERSERVICE + "/api/users"
+  process.env.DOMAIN || config.DOMAIN + "/api/users",
+  process.env.USERSERVICE || config.USERSERVICE + "/api/users"
 );
