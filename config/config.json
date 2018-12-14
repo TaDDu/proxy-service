@@ -3,5 +3,5 @@
   "DOMAIN": "localhost",
   "USERSERVICE": "localhost:8081",
   "FRONTSERVICE": "localhost:8080",
-  "IPLOCATIONSERVICE": ""
+  "IPLOCATIONSERVICE": "localhost:8082"
 }
