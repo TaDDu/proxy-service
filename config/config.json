@@ -3,5 +3,6 @@
   "DOMAIN": "localhost",
   "USERSERVICE": "localhost:8081",
   "FRONTSERVICE": "localhost:8080",
-  "IPLOCATIONSERVICE": "localhost:8082"
+  "IPLOCATIONSERVICE": "localhost:8082",
+  "WEATHERSERVICE": "localhost:8083"
 }
