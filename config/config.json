@@ -4,5 +4,6 @@
   "USERSERVICE": "localhost:8081",
   "FRONTSERVICE": "localhost:8080",
   "IPLOCATIONSERVICE": "localhost:8082",
-  "WEATHERSERVICE": "localhost:8083"
+  "WEATHERSERVICE": "localhost:8083",
+  "TASKSERVICE": "localhost:8084"
 }

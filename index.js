@@ -5,6 +5,7 @@ var domain = process.env.DOMAIN || config.DOMAIN;
 var userservice = process.env.USERSERVICE || config.USERSERVICE;
 var iplocation = process.env.IPLOCATIONSERVICE || config.IPLOCATIONSERVICE;
 var weatherservice = process.env.WEATHERSERVICE || config.WEATHERSERVICE;
+var taskservice = process.env.TASKSERVICE || config.TASKSERVICE;
 var frontend = process.env.FRONTSERVICE || config.FRONTSERVICE;
 // LOGIN
 proxy.register(domain + "/api/login", userservice + "/api/login");
@@ -16,5 +17,7 @@ proxy.register(domain + "/api/ip-location", iplocation + "/api/ip-location");
 // WEATHERSERVICE
 proxy.register(domain + "/api/weather", weatherservice + "/api/weather");
 
+// TASKSERVICE
+proxy.register(domain + "/api/tasks", taskservice + "/api/tasks");
 // FRONTEND
 proxy.register(domain, frontend);
