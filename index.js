@@ -14,6 +14,13 @@ var proxy = require("redbird")({
   }
 });
 
+const sslSettings = {
+  letsencrypt: {
+    email: process.env.EMAIL || "", // Domain owner/admin email
+    production: process.env.PRO || false // WARNING: Only use this flag when the proxy is verified to work correctly to avoid being banned!
+  }
+};
+
 var domain = process.env.DOMAIN || config.DOMAIN;
 var userservice = process.env.USERSERVICE || config.USERSERVICE;
 var iplocation = process.env.IPLOCATIONSERVICE || config.IPLOCATIONSERVICE;
@@ -39,10 +46,5 @@ proxy.register(domain + "/api/geocoding", geoservice + "/api/geocoding");
 
 // FRONTEND
 proxy.register(domain, frontend, {
-  ssl: {
-    letsencrypt: {
-      email: process.env.EMAIL || "", // Domain owner/admin email
-      production: process.env.PRO || false // WARNING: Only use this flag when the proxy is verified to work correctly to avoid being banned!
-    }
-  }
+  ssl: sslSettings
 });
