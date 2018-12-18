@@ -2,8 +2,9 @@
   "PORT": 80,
   "DOMAIN": "localhost",
   "USERSERVICE": "localhost:8081",
-  "FRONTSERVICE": "localhost:8080",
+  "FRONTSERVICE": "localhost:3000",
   "IPLOCATIONSERVICE": "localhost:8082",
   "WEATHERSERVICE": "localhost:8083",
-  "TASKSERVICE": "localhost:8084"
+  "TASKSERVICE": "localhost:8084",
+  "GEOSERVICE": "localhost:8085"
 }
