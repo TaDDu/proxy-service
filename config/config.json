@@ -6,5 +6,6 @@
   "IPLOCATIONSERVICE": "localhost:8082",
   "WEATHERSERVICE": "localhost:8083",
   "TASKSERVICE": "localhost:8084",
-  "GEOSERVICE": "localhost:8085"
+  "GEOSERVICE": "localhost:8085",
+  "DOMAINSERVICE": "localhost:8086"
 }

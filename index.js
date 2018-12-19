@@ -27,6 +27,7 @@ var iplocation = process.env.IPLOCATIONSERVICE || config.IPLOCATIONSERVICE;
 var weatherservice = process.env.WEATHERSERVICE || config.WEATHERSERVICE;
 var taskservice = process.env.TASKSERVICE || config.TASKSERVICE;
 var geoservice = process.env.GEOSERVICE || config.GEOSERVICE;
+var domainservice = porocess.env.DOMAINSERVICE || config.DOMAINSERVICE;
 var frontend = process.env.FRONTSERVICE || config.FRONTSERVICE;
 // LOGIN
 proxy.register(domain + "/api/login", userservice + "/api/login");
@@ -43,6 +44,9 @@ proxy.register(domain + "/api/tasks", taskservice + "/api/tasks");
 
 //GEOSERVICE
 proxy.register(domain + "/api/geocoding", geoservice + "/api/geocoding");
+
+//DOMAINS
+proxy.register(domain + "/api/domains", domainservice + "/api/domains");
 
 // FRONTEND
 proxy.register(domain, frontend, {
