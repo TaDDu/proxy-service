@@ -1,11 +1,13 @@
 {
   "PORT": 80,
   "DOMAIN": "localhost",
+  "INTERNALDOMAIN": "localhost",
   "USERSERVICE": "localhost:8081",
   "FRONTSERVICE": "localhost:3000",
   "IPLOCATIONSERVICE": "localhost:8082",
   "WEATHERSERVICE": "localhost:8083",
   "TASKSERVICE": "localhost:8084",
   "GEOSERVICE": "localhost:8085",
-  "DOMAINSERVICE": "localhost:8086"
+  "DOMAINSERVICE": "localhost:8086",
+  "SHORTSERVICE": "localhost:8088"
 }

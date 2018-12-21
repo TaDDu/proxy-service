@@ -22,31 +22,48 @@ const sslSettings = {
 };
 
 var domain = process.env.DOMAIN || config.DOMAIN;
+var internaldomain = process.env.INTERNALDOMAIN || config.INTERNALDOMAIN;
+
 var userservice = process.env.USERSERVICE || config.USERSERVICE;
 var iplocation = process.env.IPLOCATIONSERVICE || config.IPLOCATIONSERVICE;
 var weatherservice = process.env.WEATHERSERVICE || config.WEATHERSERVICE;
 var taskservice = process.env.TASKSERVICE || config.TASKSERVICE;
 var geoservice = process.env.GEOSERVICE || config.GEOSERVICE;
-var domainservice = porocess.env.DOMAINSERVICE || config.DOMAINSERVICE;
+var domainservice = process.env.DOMAINSERVICE || config.DOMAINSERVICE;
+var shortservice = process.env.SHORTSERVICE || config.SHORTSERVICE;
 var frontend = process.env.FRONTSERVICE || config.FRONTSERVICE;
 // LOGIN
 proxy.register(domain + "/api/login", userservice + "/api/login");
 proxy.register(domain + "/api/users", userservice + "/api/users");
+proxy.register(internaldomain + "/api/login", userservice + "/api/login");
+proxy.register(internaldomain + "/api/users", userservice + "/api/users");
 
 // IP SERVICE
 proxy.register(domain + "/api/ip-location", iplocation + "/api/ip-location");
-
+proxy.register(
+  internaldomain + "/api/ip-location",
+  iplocation + "/api/ip-location"
+);
 // WEATHERSERVICE
 proxy.register(domain + "/api/weather", weatherservice + "/api/weather");
-
+proxy.register(
+  internaldomain + "/api/weather",
+  weatherservice + "/api/weather"
+);
 // TASKSERVICE
 proxy.register(domain + "/api/tasks", taskservice + "/api/tasks");
-
+proxy.register(internaldomain + "/api/tasks", taskservice + "/api/tasks");
 //GEOSERVICE
 proxy.register(domain + "/api/geocoding", geoservice + "/api/geocoding");
-
+proxy.register(
+  internaldomain + "/api/geocoding",
+  geoservice + "/api/geocoding"
+);
 //DOMAINS
 proxy.register(domain + "/api/domains", domainservice + "/api/domains");
+proxy.register(internaldomain + "/api/domains", domainservice + "/api/domains");
+
+proxy.register(domain + "/u", shortservice);
 
 // FRONTEND
 proxy.register(domain, frontend, {
