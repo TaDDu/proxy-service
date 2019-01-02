@@ -38,6 +38,19 @@ var shortservice = process.env.SHORTSERVICE || config.SHORTSERVICE;
 //APPS
 var frontend = process.env.FRONTSERVICE || config.FRONTSERVICE;
 var homepage = process.env.HOMEPAGE || config.HOMEPAGE;
+
+// main
+// FRONTEND
+proxy.register(domain, homepage, {
+  ssl: sslSettings
+});
+
+// WEATHERAPP
+proxy.register(weatherDomain, frontend, {
+  ssl: sslSettings
+});
+proxy.register(weatherDomain + "/api", domain + "/api");
+
 // LOGIN
 proxy.register(domain + "/api/login", userservice + "/api/login");
 proxy.register(domain + "/api/users", userservice + "/api/users");
@@ -71,15 +84,5 @@ proxy.register(internaldomain + "/api/domains", domainservice + "/api/domains");
 
 // FRONTEND
 proxy.register(shortDomain, shortservice, {
-  ssl: sslSettings
-});
-
-// FRONTEND
-proxy.register(weatherDomain, frontend, {
-  ssl: sslSettings
-});
-
-// FRONTEND
-proxy.register(domain, homepage, {
   ssl: sslSettings
 });
