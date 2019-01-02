@@ -22,6 +22,7 @@ const sslSettings = {
 };
 
 var domain = process.env.DOMAIN || config.DOMAIN;
+var weatherDomain = process.env.WEATHERAPP || config.WEATHERAPP;
 var internaldomain = process.env.INTERNALDOMAIN || config.INTERNALDOMAIN;
 
 // SERVICES
@@ -68,7 +69,11 @@ proxy.register(domain + "/api/domains", domainservice + "/api/domains");
 proxy.register(internaldomain + "/api/domains", domainservice + "/api/domains");
 
 proxy.register(domain + "/u", shortservice);
-proxy.register(domain + "/weather", frontend);
+
+// FRONTEND
+proxy.register(weatherDomain, frontend, {
+  ssl: sslSettings
+});
 
 // FRONTEND
 proxy.register(domain, homepage, {
