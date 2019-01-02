@@ -24,6 +24,7 @@ const sslSettings = {
 var domain = process.env.DOMAIN || config.DOMAIN;
 var internaldomain = process.env.INTERNALDOMAIN || config.INTERNALDOMAIN;
 
+// SERVICES
 var userservice = process.env.USERSERVICE || config.USERSERVICE;
 var iplocation = process.env.IPLOCATIONSERVICE || config.IPLOCATIONSERVICE;
 var weatherservice = process.env.WEATHERSERVICE || config.WEATHERSERVICE;
@@ -31,7 +32,10 @@ var taskservice = process.env.TASKSERVICE || config.TASKSERVICE;
 var geoservice = process.env.GEOSERVICE || config.GEOSERVICE;
 var domainservice = process.env.DOMAINSERVICE || config.DOMAINSERVICE;
 var shortservice = process.env.SHORTSERVICE || config.SHORTSERVICE;
+
+//APPS
 var frontend = process.env.FRONTSERVICE || config.FRONTSERVICE;
+var homepage = process.env.HOMEPAGE || config.HOMEPAGE;
 // LOGIN
 proxy.register(domain + "/api/login", userservice + "/api/login");
 proxy.register(domain + "/api/users", userservice + "/api/users");
@@ -64,8 +68,9 @@ proxy.register(domain + "/api/domains", domainservice + "/api/domains");
 proxy.register(internaldomain + "/api/domains", domainservice + "/api/domains");
 
 proxy.register(domain + "/u", shortservice);
+proxy.register(domain + "/weather", frontend);
 
 // FRONTEND
-proxy.register(domain, frontend, {
+proxy.register(domain, homepage, {
   ssl: sslSettings
 });

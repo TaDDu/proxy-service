@@ -9,5 +9,12 @@
   "TASKSERVICE": "localhost:8084",
   "GEOSERVICE": "localhost:8085",
   "DOMAINSERVICE": "localhost:8086",
-  "SHORTSERVICE": "localhost:8088"
+  "SHORTSERVICE": "localhost:8088",
+  "HOMEPAGE": "localhost:8080",
+  "routes": [
+    {
+      "from": "",
+      "to": ""
+    }
+  ]
 }
