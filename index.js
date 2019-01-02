@@ -49,7 +49,16 @@ proxy.register(domain, homepage, {
 proxy.register(weatherDomain, frontend, {
   ssl: sslSettings
 });
-proxy.register(weatherDomain + "/api", domain + "/api");
+proxy.register(weatherDomain + "/api/login", userservice + "/api/login");
+proxy.register(weatherDomain + "/api/users", userservice + "/api/users");
+proxy.register(
+  weatherDomain + "/api/ip-location",
+  iplocation + "/api/ip-location"
+);
+proxy.register(weatherDomain + "/api/weather", weatherservice + "/api/weather");
+proxy.register(weatherDomain + "/api/tasks", taskservice + "/api/tasks");
+proxy.register(weatherDomain + "/api/geocoding", geoservice + "/api/geocoding");
+proxy.register(weatherDomain + "/api/domains", domainservice + "/api/domains");
 
 // LOGIN
 proxy.register(domain + "/api/login", userservice + "/api/login");
